@@ -26,6 +26,13 @@ sed -i "s/'relations.html',/'about.html','navigation.html','relations.html',/g" 
 #switching to readthedocs theme
 sed -i "s/html_theme = 'alabaster'/import sphinx_rtd_theme \\nhtml_theme = 'sphinx_rtd_theme' \\nhtml_theme_path = [sphinx_rtd_theme.get_html_theme_path()]/g"  /project/tmp/conf.py
 
+#removing blank page from PDF at the end of each chapter
+sed -i "s/# Additional stuff for the LaTeX preamble./# Additional stuff for the LaTeX preamble. \\n'classoptions': ',openany,oneside'/g"  /project/tmp/conf.py
+
+
+
+
+
 # copying to tmp dir
 /bin/cp -rf /project/input/* /project/tmp
 
@@ -38,6 +45,3 @@ make html
 rm -rf /project/output/html/
 cp -rf /project/tmp/_build/html/ /project/output/html/
 cp -rf /project/tmp/_build/latex/*.pdf /project/output/pdf/
-
-
-# setting up output folder

@@ -1,4 +1,4 @@
-Markdown test
+Table of content
 -------------
 
 .. toctree::
