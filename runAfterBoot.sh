@@ -9,6 +9,8 @@ mkdir -p output/pdf/
 
 cd tmp/
 sphinx-quickstart -q -p "$Project" -a "$Author" -v "$Version" --suffix=.rst
+
+# adding markdown support
 echo "from recommonmark.parser import CommonMarkParser" >> conf.py
 echo "source_parsers = {'.md': CommonMarkParser}" >> conf.py
 
@@ -18,16 +20,16 @@ sed -i "s/# source_suffix = \['.rst', '.md'\]/source_suffix = \['.rst', '.md'\]/
 #removing wrong suffix line
 sed -i "s/source_suffix = '.rst'//g"  /project/tmp/conf.py
 
-# correcting output dir in Makefile
-
+#adding items to the navigation
+sed -i "s/'relations.html',/'about.html','navigation.html','relations.html',/g"  /project/tmp/conf.py
 
 # copying to tmp dir
 /bin/cp -rf /project/input/* /project/tmp
 
 # creating output
 make latexpdf
+
 # build html directly to target dir
-#sed -i "s/BUILDDIR      = _build/BUILDDIR      = ..\/output/g"  /project/tmp/Makefile
 make html
 
 cp -rf /project/tmp/_build/html/ /project/output/html/
