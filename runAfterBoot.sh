@@ -23,6 +23,9 @@ sed -i "s/source_suffix = '.rst'//g"  /project/tmp/conf.py
 #adding items to the navigation
 sed -i "s/'relations.html',/'about.html','navigation.html','relations.html',/g"  /project/tmp/conf.py
 
+#switching to readthedocs theme
+sed -i "s/html_theme = 'alabaster'/import sphinx_rtd_theme \\nhtml_theme = 'sphinx_rtd_theme' \\nhtml_theme_path = [sphinx_rtd_theme.get_html_theme_path()]/g"  /project/tmp/conf.py
+
 # copying to tmp dir
 /bin/cp -rf /project/input/* /project/tmp
 
