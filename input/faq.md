@@ -1,3 +1,3 @@
 # FAQ
 
-some frequently asked questions
+some frequently asked questions. Will be filled later.

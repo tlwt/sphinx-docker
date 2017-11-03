@@ -1,4 +1,4 @@
-# SPHINX Dokumentation
+# SPHINX Quickstart
 
 container to generate SPHINX documentation. Will output HTML and PDF
 
@@ -17,9 +17,9 @@ Run the container with
 ```
 
     docker run --name sphinx --rm \
-    -e "Project=Test Project" \
+    -e "Project=Sphinx in a docker" \
     -e "Author=Till Witt" \
-    -e "Version=1" \
+    -e "Version=v1.0" \
     -v "$(pwd)/input:/project/input" \
     -v "$(pwd)/output:/project/output" \
         -i -t sphinx_image

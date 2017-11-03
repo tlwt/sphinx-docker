@@ -5,7 +5,11 @@ Markdown test
    :glob:
 
    aboutThisManual
+   quickstart
    systemArchitecture
-   mainManual
+   writingDocumentation.md
+   generatingOutput.md
    faq
    glossary
+   restCheatSheet.rst
+   markdownCheatSheet.md

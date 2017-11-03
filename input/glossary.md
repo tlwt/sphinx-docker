@@ -1,3 +1,3 @@
 # Glossary
 
-what needs to be explained
+Explanation of some specific terms. Will be filled later.
