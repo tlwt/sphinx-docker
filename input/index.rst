@@ -1,9 +1,11 @@
 Markdown test
 -------------
 
-Markdown files:
-
 .. toctree::
    :glob:
 
-   markdown
+   aboutThisManual
+   systemArchitecture
+   mainManual
+   faq
+   glossary
