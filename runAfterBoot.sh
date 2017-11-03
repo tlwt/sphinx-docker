@@ -2,10 +2,10 @@
 echo sphinx
 
 # folder to keep configuration
-mkdir -p input/
-mkdir -p tmp/
-mkdir -p output/
-mkdir -p output/pdf/
+mkdir -p /project/input/
+mkdir -p /project/tmp/
+mkdir -p /project/output/
+mkdir -p /project/output/pdf/
 
 cd tmp/
 sphinx-quickstart -q -p "$Project" -a "$Author" -v "$Version" --suffix=.rst
@@ -32,8 +32,9 @@ make latexpdf
 # build html directly to target dir
 make html
 
+rm -rf /project/output/html/
 cp -rf /project/tmp/_build/html/ /project/output/html/
-cp -rf /project/tmp/_build/latex/*.pdf /project/output/pdf
+cp -rf /project/tmp/_build/latex/*.pdf /project/output/pdf/
 
 
 # setting up output folder
