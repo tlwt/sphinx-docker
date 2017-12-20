@@ -7,7 +7,7 @@ mkdir -p /project/tmp/
 mkdir -p /project/output/
 mkdir -p /project/output/pdf/
 
-cd tmp/
+cd /project/tmp/
 sphinx-quickstart -q -p "$Project" -a "$Author" -v "$Version" --suffix=.rst
 
 # adding markdown support
